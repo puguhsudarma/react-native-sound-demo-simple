@@ -1,0 +1,54 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "__DEV__": true,
+        "navigator": true
+    },
+    "rules": {
+        "object-curly-newline": "off",
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "no-underscore-dangle": 0,
+        "arrow-body-style": 0,
+        "no-console": 0,
+        "react/jsx-indent": [
+            2,
+            4
+        ],
+        "react/jsx-indent-props": [
+            2,
+            4
+        ],
+        "react/jsx-closing-bracket-location": [
+            1,
+            {
+                "nonEmpty": false,
+                "selfClosing": false
+            }
+        ],
+        "global-require": 0,
+        "max-len": 0,
+        "class-methods-use-this": 0,
+        "camelcase": 0,
+        "no-useless-escape": 0,
+        "no-empty-pattern": 0,
+        "no-alert": 0
+    }
+}
