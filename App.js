@@ -17,8 +17,17 @@ class SpinTheWheel extends Component {
             },
         };
 
-        this._soundKejutan = null;
         this._handleSound = this._handleSound.bind(this);
+
+        const { file } = this.state;
+        const { basePath, name } = file;
+        setTimeout(() => {
+            this._soundKejutan = new RNSound(name, basePath, (err) => {
+                if (err) {
+                    console.log('ERROR LOAD SOUND: ', err);
+                }
+            });
+        }, 5000);
     }
 
     componentWillUnmount() {
@@ -28,17 +37,11 @@ class SpinTheWheel extends Component {
     }
 
     _handleSound() {
-        const { file } = this.state;
-        const { basePath, name } = file;
-        this._soundKejutan = new RNSound(name, basePath, (err) => {
-            if (err) {
-                console.log('ERROR LOAD SOUND: ', err);
-            } else {
-                // this._soundKejutan.play((success) => {
-                //     console.log('SUCCESS PLAY SOUND: ', success);
-                // });
-            }
-        });
+        if (this._soundKejutan !== undefined) {
+            this._soundKejutan.play((success) => {
+                console.log('SUCCESS PLAY SOUND: ', success);
+            });
+        }
         alert('Playing sound'); // eslint-disable-line
     }
 
